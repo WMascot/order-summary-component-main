@@ -1,0 +1,187 @@
+@font-face {
+    font-family: "Red Hat Display";
+    font-weight: 100 900;
+    src: url("../assets/fonts/RedHatDisplay-VariableFont_wght.ttf");
+}
+
+:root {
+    --clr-primary-hsl-200: 225, 100%, 94%;
+    --clr-primary-hsl-400: 245, 75%, 52%;
+    --clr-primary-lighter-hsl-400: 245, 75%, 66%;
+
+    --clr-neutral-hsl-100: 225, 100%, 98%;
+    --clr-neutral-hsl-300: 224, 23%, 55%;
+    --clr-neutral-hsl-500: 223, 47%, 23%;
+
+    --clr-primary-200: hsl(var(--clr-primary-hsl-200));
+    --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+    --clr-primary-lighter-400: hsl(var(--clr-primary-lighter-hsl-400));
+
+    --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+    --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+    --clr-neutral-500: hsl(var(--clr-neutral-hsl-500));
+
+    --clr-white-hsl: 0, 0%, 100%;
+
+    --clr-white: hsl(var(--clr-white-hsl));
+
+    --font-family-default: "Red Hat Display", sans-serif;
+
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-black: 900;
+
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 1.75rem;
+    --fs-900: 2rem;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-family-default);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-300);
+    background-image: url("../assets/images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-color: var(--clr-primary-200);
+
+    @media (min-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        background-image: url("../assets/images/pattern-background-desktop.svg");
+
+        .container {
+            flex-grow: 2;
+        }
+    }
+
+    .container {
+        display: grid;
+        place-items: center;
+
+        @media (max-width: 600px) {
+            padding: 1.5rem;
+        }
+    }
+
+    .grid-flow {
+        display: grid;
+        align-content: start;
+        gap: 1rem;
+
+        &[data-grid-type=medium] {
+            gap: 1.25rem;
+        }
+
+        &[data-grid-type=large] {
+            gap: 1.5rem;
+        }
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+
+        &>.gap {
+            gap: 1rem;
+        }
+    }
+}
+
+.card {
+    --padding: 2.5rem;
+    --border-radius: 1.25rem;
+
+    @media (max-width: 600px) {
+        --padding: 1.75rem;
+    }
+
+    display: grid;
+    align-content: start;
+
+    max-width: 26rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--clr-white);
+
+    &__bottom {
+        padding: var(--padding);
+
+        &_title {
+            font-weight: var(--fw-black);
+            font-size: var(--fs-700);
+            color: var(--clr-neutral-500);
+        }
+
+        &_proceed {
+            padding: .75rem;
+            font-weight: var(--fw-bold);
+            border-radius: .6rem;
+            box-shadow: 0rem .75rem 1rem .5rem hsl(var(--clr-neutral-hsl-300), .2);
+            color: var(--clr-white);
+            background-color: var(--clr-primary-400);
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--clr-primary-lighter-400);
+            }
+        }
+
+        &_cancel {
+            font-weight: var(--fw-bold);
+            color: var(--clr-neutral-300);
+            background-color: transparent;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--clr-neutral-500);
+            }
+        }
+    }
+}
+
+.subscription-plan {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto 1fr auto;
+    justify-items: start;
+    padding: 1.25rem;
+    border-radius: calc(var(--border-radius) * .75);
+    background-color: var(--clr-neutral-100);
+
+    @media (max-width: 600px) {
+        padding: 1rem;
+        font-size: calc(var(--fs-400) * .9);
+    }
+
+    &__info {
+        display: grid;
+        align-content: center;
+
+        @media (min-width: 600px) {
+            align-content: space-between;
+        }
+
+        &_name {
+            font-weight: var(--fw-black);
+            color: var(--clr-neutral-500);
+        }
+    }
+
+    &__change {
+        display: grid;
+        align-items: center;
+        font-weight: var(--fw-bold);
+        text-decoration: underline;
+        color: var(--clr-primary-400);
+
+        &:hover {
+            color: var(--clr-primary-lighter-400);
+        }
+    }
+}
