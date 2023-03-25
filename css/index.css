@@ -22,6 +22,7 @@
   --fw-medium: 500;
   --fw-bold: 700;
   --fw-black: 900;
+  --fs-300: 0.875rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-600: 1.25rem;
@@ -79,11 +80,11 @@ body .flex > .gap {
 }
 
 .card {
-  --padding: 2.5rem;
+  --padding: 3.5rem;
   --border-radius: 1.25rem;
   display: grid;
   align-content: start;
-  max-width: 26rem;
+  max-width: 28rem;
   border-radius: var(--border-radius);
   overflow: hidden;
   text-align: center;
@@ -95,16 +96,20 @@ body .flex > .gap {
   }
 }
 .card__bottom {
-  padding: var(--padding);
+  padding: calc(var(--padding) - 1rem) var(--padding);
 }
 .card__bottom_title {
   font-weight: var(--fw-black);
-  font-size: var(--fs-700);
+  font-size: var(--fs-800);
   color: var(--clr-neutral-500);
+}
+.card__bottom_text {
+  line-height: 1.5;
 }
 .card__bottom_proceed {
   padding: 0.75rem;
   font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
   border-radius: 0.6rem;
   box-shadow: 0rem 0.75rem 1rem 0.5rem hsl(var(--clr-neutral-hsl-300), 0.2);
   color: var(--clr-white);
@@ -116,6 +121,7 @@ body .flex > .gap {
 }
 .card__bottom_cancel {
   font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
   color: var(--clr-neutral-300);
   background-color: transparent;
 }
@@ -156,6 +162,7 @@ body .flex > .gap {
   display: grid;
   align-items: center;
   font-weight: var(--fw-bold);
+  font-size: var(--fs-300);
   text-decoration: underline;
   color: var(--clr-primary-400);
 }
