@@ -32,6 +32,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   font-family: var(--font-family-default);
   font-weight: var(--fw-medium);
@@ -43,17 +45,13 @@ body {
 }
 @media (min-width: 600px) {
   body {
-    display: flex;
-    flex-direction: column;
     background-image: url("../assets/images/pattern-background-desktop.svg");
-  }
-  body .container {
-    flex-grow: 2;
   }
 }
 body .container {
   display: grid;
   place-items: center;
+  flex-grow: 2;
 }
 @media (max-width: 600px) {
   body .container {

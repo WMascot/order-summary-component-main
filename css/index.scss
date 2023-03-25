@@ -41,6 +41,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     font-family: var(--font-family-default);
     font-weight: var(--fw-medium);
@@ -51,18 +53,13 @@ body {
     background-color: var(--clr-primary-200);
 
     @media (min-width: 600px) {
-        display: flex;
-        flex-direction: column;
         background-image: url("../assets/images/pattern-background-desktop.svg");
-
-        .container {
-            flex-grow: 2;
-        }
     }
 
     .container {
         display: grid;
         place-items: center;
+        flex-grow: 2;
 
         @media (max-width: 600px) {
             padding: 1.5rem;
@@ -109,7 +106,7 @@ body {
     overflow: hidden;
     text-align: center;
     background-color: var(--clr-white);
-    box-shadow: 0rem .75rem 3rem 0rem hsl(var(--clr-neutral-hsl-300), 0.4);
+    box-shadow: 0rem 0.75rem 3rem 0rem hsl(var(--clr-neutral-hsl-300), 0.4);
 
     &__bottom {
         padding: calc(var(--padding) - 1rem) var(--padding);
@@ -160,7 +157,7 @@ body {
     justify-items: start;
     padding: 1.25rem;
     border-radius: calc(var(--border-radius) * 0.75);
-    background-color: hsl(var(--clr-neutral-hsl-100), .75);
+    background-color: hsl(var(--clr-neutral-hsl-100), 0.75);
 
     @media (max-width: 600px) {
         padding: 1rem;
