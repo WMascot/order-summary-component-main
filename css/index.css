@@ -106,7 +106,7 @@ body .flex > .gap {
   line-height: 1.5;
 }
 .card__bottom_proceed {
-  padding: 0.75rem;
+  padding: 1rem;
   font-weight: var(--fw-black);
   font-size: var(--fs-300);
   border-radius: 0.6rem;
